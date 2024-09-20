@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
+import { useEffect } from "react";
+import { auth } from "../config/firebase";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,6 +17,9 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+  useEffect(() => {
+    console.log("Firebase Auth:", auth);
+  }, []);
   return (
     <>
       <Head>
